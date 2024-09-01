@@ -6,7 +6,7 @@ const API_KEY ="2c4561da9e594416bc40339c91bd54b8"
 
 
 
-function Search() {
+function Search({foodData,setFoodData}) {
     const [query,setQuery] =useState("pasta");
 
     useEffect(()=>{ 
@@ -14,6 +14,7 @@ function Search() {
          const res = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`)
          const data = await res.json();
          console.log(data.results)
+         setFoodData(data.results)
         }
         fetchFood();
     },[query])
