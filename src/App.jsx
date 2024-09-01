@@ -1,9 +1,9 @@
-import './App.css'
+
 
 function App() {
 
   return (
-<h1>Food app</h1>
+<h1>Food app 2</h1>
   )
 }
 
