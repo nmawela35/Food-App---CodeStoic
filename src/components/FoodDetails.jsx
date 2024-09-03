@@ -26,19 +26,21 @@ function FoodDetails({ foodId }) {
         <div>
             <span><strong>{food.readyInMinutes} Minutes</strong></span>
             <span><strong>Serves {food.servings}</strong></span>
-            <span>{food.vegeterian ? "Vegeterain" : "Non-vegeterian"}</span>
-            <span>{food.vegan ? "Vegan" : ""}</span>
+            <span>{food.vegeterian ? "Vegeterain " : "Non-vegeterian"}</span>
+            <span>{food.vegan ? "Vegan " : ""}</span>
         </div>
         <div>$<span>{food.pricePerServing / 100} per serving</span></div>
-      </div>
-      
-      <div>
+
         <h2>Instructions</h2>
+      <div>
+        <ol>
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          food.analyzedInstructions[0].steps.map((step) => <li>{step.step}</li>)
+          food.analyzedInstructions[0].steps.map((step) => (<li>{step.step}</li>))
         )}
+        </ol>
+        </div>
       </div>
     </div>
   );
