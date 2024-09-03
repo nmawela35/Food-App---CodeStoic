@@ -24,12 +24,8 @@ function FoodDetails({ foodId }) {
         <h1>{food.title}</h1>
         <img src={food.image} alt="" />
         <div>
-          <span>
-            <strong>{food.readyInMinutes}</strong>
-          </span>
-          <span>
-            <strong>Serves {food.servings}</strong>
-          </span>
+          <span><strong>{food.readyInMinutes} Minutes</strong></span>
+          <span><strong>Serves {food.servings}</strong></span>
           <span>{food.vegeterian ? "Vegeterain" : "Non-vegeterian"}</span>
           <span>{food.vegan ? "Vegan" : ""}</span>
         </div>
@@ -39,12 +35,12 @@ function FoodDetails({ foodId }) {
         </div>
       </div>
       <div>
+        <h2>Instructions</h2>
         {isLoading ? (
           <p>Loading...</p>
         ) : (
           food.analyzedInstructions[0].steps.map((step) => <li>{step.step}</li>)
         )}
-        <h2>Instructions</h2>
       </div>
     </div>
   );
